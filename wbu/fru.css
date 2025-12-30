@@ -1,0 +1,192 @@
+/* 🌌 Galaxy Background */
+.galaxy {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at bottom, #070106, #970e85 100%);
+    overflow: hidden;
+    z-index: -1;
+}
+
+/* Stars layers */
+.stars, .stars2, .stars3 {
+    position: absolute;
+    inset: 0;
+    background-repeat: repeat;
+    animation: moveStars linear infinite;
+}
+
+/* Small stars */
+.stars {
+    background-image: radial-gradient(1px 1px at 20% 30%, white, transparent),
+                      radial-gradient(1px 1px at 80% 40%, white, transparent),
+                      radial-gradient(1px 1px at 50% 70%, white, transparent);
+    background-size: 200px 200px;
+    animation-duration: 120s;
+}
+
+/* Medium glowing stars */
+.stars2 {
+    background-image: radial-gradient(2px 2px at 10% 20%, #a9c9ff, transparent),
+                      radial-gradient(2px 2px at 70% 60%, #ffd6ff, transparent);
+    background-size: 300px 300px;
+    animation-duration: 180s;
+}
+
+/* Big soft glow stars */
+.stars3 {
+    background-image: radial-gradient(3px 3px at 30% 50%, #fff, transparent),
+                      radial-gradient(3px 3px at 90% 10%, #cdb4ff, transparent);
+    background-size: 400px 400px;
+    animation-duration: 240s;
+}
+
+/* Star movement */
+@keyframes moveStars {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-1000px); }
+}
+.stars, .stars2, .stars3 {
+    filter: drop-shadow(0 0 6px white);
+    animation-name: moveStars, twinkle;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; }
+}
+
+/* 🌸 Flower Bloom Animation */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 120vh;
+    background: linear-gradient(to bottom, #dd58a6, #000000);
+    margin: 0;
+}
+
+.words {
+    position: absolute;
+    top: 20px;
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-family: 'Georgia', serif;
+    text-shadow: 0 0 5px #ff69b4, 0 0 10px #ff69b4;
+}
+
+.gitnabilog {
+    position: relative;
+    width: 200px;
+    height: 670px; /* Increased to fit stem below */
+}
+
+.paa {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 440px;
+    background: rgb(6, 197, 6);
+    border-radius: 5px;
+}
+
+.dahon-left {
+    position: absolute;
+    bottom: 230px; 
+    left: 35%;
+    transform: translateX(-130%) rotate(140deg);
+    width: 30px;
+    height: 150px;
+    background: green;
+    border-radius: 0 150% 150% 150% / 0 150% 150% 150%;
+    z-index: 1;
+}
+.dahon-right {
+    position: absolute;
+    bottom: 130px; 
+    left: 65%;
+    transform: translateX(30%) rotate(-140deg);
+    width: 30px;
+    height: 150px;
+    background: green;
+    border-radius: 150% 0 150% 150% / 150% 0 150% 150%;
+    z-index: 1;
+}
+
+.center {
+    position: absolute;
+    top: 200px; /* Positioned at the top of the stem */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/*Height of petal adjusted for better overlap*/
+.petal {
+    position: absolute;
+    left: 40%;
+    top: 85px; /* Positioned to overlap center */
+    transform-origin: bottom center;
+}
+
+.petal span {
+    display: block;
+    width: 40px;
+    height: 130px;
+    background: rgb(253, 76, 179);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    transform-origin: bottom center;
+    transform: scale(0);
+    opacity: 0;
+
+    /* 🌸 Glow effect */
+    filter: drop-shadow(0 0 12px #ff4fd8)
+            drop-shadow(0 0 25px #ff87e0);
+}
+.flower.bloom .petal span {
+    animation: bloom 1.5s ease forwards;
+}
+
+/* Rotation stays here */
+.petal:nth-child(1) { transform: rotate(0deg); }
+.petal:nth-child(2) { transform: rotate(60deg); }
+.petal:nth-child(3) { transform: rotate(120deg); }
+.petal:nth-child(4) { transform: rotate(180deg); }
+.petal:nth-child(5) { transform: rotate(240deg); }
+.petal:nth-child(6) { transform: rotate(300deg); }
+
+/* Animation */
+.bloom span {
+    animation: bloom 1.5s ease forwards;
+}
+
+@keyframes bloom {
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+color: rgb(255, 255, 255); font-size: 21px; line-height: 21px; padding: 7px; border-radius: 12px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(135deg, rgb(243, 70, 236) 0%, rgb(252, 137, 255) 62%, rgb(138, 33, 123) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+.Button:hover {
+background: rgb(211, 205, 211); }
+.Button:active {
+background: rgb(231, 82, 209); }
